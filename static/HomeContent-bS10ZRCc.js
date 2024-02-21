@@ -1,0 +1,1 @@
+import{_ as e,o,g as t}from"./index-nrIvu4tl.js";const c={},n={class:"home-content"};function s(_,a){return o(),t("div",n," 主页 ")}const d=e(c,[["render",s],["__scopeId","data-v-d574b3f5"]]);export{d as default};

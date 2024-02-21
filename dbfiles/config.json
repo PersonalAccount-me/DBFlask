@@ -1,0 +1,646 @@
+{
+    "users": [
+        {
+            "index": 0,
+            "username": "admin",
+            "password": "123456"
+        },
+        {
+            "index": "1",
+            "username": "guo",
+            "password": "123456"
+        },
+        {
+            "index": 2,
+            "username": "yun",
+            "password": "123456"
+        },
+        {
+            "index": 3,
+            "username": "hao",
+            "password": "123456"
+        },
+        {
+            "index": 4,
+            "username": "xin",
+            "password": "123456"
+        }
+    ],
+    "saved_user": 0,
+    "views": [
+        {
+            "name": "temp",
+            "table_name": "student",
+            "columns": [
+                "studentname",
+                "studentid"
+            ],
+            "define_items": [
+                {
+                    "bool_sign": "",
+                    "column": "grade",
+                    "operator": "="
+                }
+            ]
+        }
+    ],
+    "indexes": [
+        {
+            "name": "index_courseid",
+            "type": "BSTIndex",
+            "table_name": "course",
+            "column": "courseid"
+        },
+        {
+            "name": "index_studentid",
+            "type": "BSTIndex",
+            "table_name": "student",
+            "column": "studentid"
+        },
+        {
+            "name": "index_specialityid",
+            "type": "BSTIndex",
+            "table_name": "speciality",
+            "column": "specialityid"
+        },
+        {
+            "name": "index_schoolid",
+            "type": "BSTIndex",
+            "table_name": "school",
+            "column": "schoolid"
+        },
+        {
+            "name": "index_id",
+            "type": "BSTIndex",
+            "table_name": "layer3_nodes",
+            "column": "id"
+        },
+        {
+            "name": "index_source",
+            "type": "BSTIndex",
+            "table_name": "layer3_edges",
+            "column": "source"
+        },
+        {
+            "name": "cluster_course",
+            "type": "BSTIndex",
+            "table_name": "course",
+            "column": "courseid"
+        },
+        {
+            "name": "cluster_student",
+            "type": "BSTIndex",
+            "table_name": "student",
+            "column": "studentid"
+        },
+        {
+            "name": "cluster_speciality",
+            "type": "BSTIndex",
+            "table_name": "speciality",
+            "column": "specialityid"
+        },
+        {
+            "name": "cluster_school",
+            "type": "BSTIndex",
+            "table_name": "school",
+            "column": "schoolid"
+        },
+        {
+            "name": "cluster_layer3_nodes",
+            "type": "BSTIndex",
+            "table_name": "layer3_nodes",
+            "column": "id"
+        },
+        {
+            "name": "cluster_layer3_edges",
+            "type": "BSTIndex",
+            "table_name": "layer3_edges",
+            "column": "source"
+        },
+        {
+            "name": "cluster_layer4_nodes",
+            "type": "BSTIndex",
+            "table_name": "layer4_nodes",
+            "column": "id"
+        },
+        {
+            "name": "cluster_layer4_edges",
+            "type": "BSTIndex",
+            "table_name": "layer4_edges",
+            "column": "source"
+        },
+        {
+            "name": "cluster_layer5_nodes",
+            "type": "BSTIndex",
+            "table_name": "layer5_nodes",
+            "column": "id"
+        },
+        {
+            "name": "cluster_layer5_edges",
+            "type": "BSTIndex",
+            "table_name": "layer5_edges",
+            "column": "source"
+        },
+        {
+            "name": "cluster_layer6_nodes",
+            "type": "BSTIndex",
+            "table_name": "layer6_nodes",
+            "column": "id"
+        },
+        {
+            "name": "cluster_layer6_edges",
+            "type": "BSTIndex",
+            "table_name": "layer6_edges",
+            "column": "source"
+        },
+        {
+            "name": "cluster_layer7_nodes",
+            "type": "BSTIndex",
+            "table_name": "layer7_nodes",
+            "column": "id"
+        },
+        {
+            "name": "cluster_layer7_edges",
+            "type": "BSTIndex",
+            "table_name": "layer7_edges",
+            "column": "source"
+        }
+    ],
+    "tables": [
+        {
+            "name": "course",
+            "column_units": [
+                {
+                    "name": "schoolid",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                },
+                {
+                    "name": "courseid",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "coursename",
+                    "type": "STRING",
+                    "constraints": [
+                        "UNIQUE",
+                        "NOT NULL"
+                    ]
+                },
+                {
+                    "name": "teachername",
+                    "type": "STRING",
+                    "constraints": [
+                        "UNIQUE",
+                        "NOT NULL"
+                    ]
+                }
+            ],
+            "foreign_units": [
+                {
+                    "name": "schoolid",
+                    "table": "school",
+                    "column": "schoolid"
+                }
+            ]
+        },
+        {
+            "name": "student",
+            "column_units": [
+                {
+                    "name": "studentname",
+                    "type": "STRING",
+                    "constraints": [
+                        "UNIQUE",
+                        "NOT NULL"
+                    ]
+                },
+                {
+                    "name": "studentid",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "grade",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                },
+                {
+                    "name": "specialityid",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                },
+                {
+                    "name": "courseid",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": [
+                {
+                    "name": "specialityid",
+                    "table": "speciality",
+                    "column": "specialityid"
+                },
+                {
+                    "name": "courseid",
+                    "table": "course",
+                    "column": "courseid"
+                }
+            ]
+        },
+        {
+            "name": "speciality",
+            "column_units": [
+                {
+                    "name": "speciality",
+                    "type": "STRING",
+                    "constraints": [
+                        "UNIQUE",
+                        "NOT NULL"
+                    ]
+                },
+                {
+                    "name": "specialityid",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "schoolid",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": [
+                {
+                    "name": "schoolid",
+                    "table": "school",
+                    "column": "schoolid"
+                }
+            ]
+        },
+        {
+            "name": "school",
+            "column_units": [
+                {
+                    "name": "schoolname",
+                    "type": "STRING",
+                    "constraints": [
+                        "UNIQUE",
+                        "NOT NULL"
+                    ]
+                },
+                {
+                    "name": "schoolid",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                }
+            ],
+            "foreign_units": []
+        },
+        {
+            "name": "layer3_nodes",
+            "column_units": [
+                {
+                    "name": "id",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": []
+        },
+        {
+            "name": "layer3_edges",
+            "column_units": [
+                {
+                    "name": "source",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "target",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "weight",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": [
+                {
+                    "name": "target",
+                    "table": "layer3_nodes",
+                    "column": "target"
+                },
+                {
+                    "name": "source",
+                    "table": "layer3_nodes",
+                    "column": "source"
+                }
+            ]
+        },
+        {
+            "name": "layer4_nodes",
+            "column_units": [
+                {
+                    "name": "id",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": []
+        },
+        {
+            "name": "layer4_edges",
+            "column_units": [
+                {
+                    "name": "source",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "target",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "weight",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": [
+                {
+                    "name": "target",
+                    "table": "layer4_nodes",
+                    "column": "target"
+                },
+                {
+                    "name": "source",
+                    "table": "layer4_nodes",
+                    "column": "source"
+                }
+            ]
+        },
+        {
+            "name": "layer5_nodes",
+            "column_units": [
+                {
+                    "name": "id",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": []
+        },
+        {
+            "name": "layer5_edges",
+            "column_units": [
+                {
+                    "name": "source",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "target",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "weight",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": [
+                {
+                    "name": "target",
+                    "table": "layer5_nodes",
+                    "column": "target"
+                },
+                {
+                    "name": "source",
+                    "table": "layer5_nodes",
+                    "column": "source"
+                }
+            ]
+        },
+        {
+            "name": "layer6_nodes",
+            "column_units": [
+                {
+                    "name": "id",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": []
+        },
+        {
+            "name": "layer6_edges",
+            "column_units": [
+                {
+                    "name": "source",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "target",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "weight",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": [
+                {
+                    "name": "target",
+                    "table": "layer6_nodes",
+                    "column": "target"
+                },
+                {
+                    "name": "source",
+                    "table": "layer6_nodes",
+                    "column": "source"
+                }
+            ]
+        },
+        {
+            "name": "layer7_nodes",
+            "column_units": [
+                {
+                    "name": "id",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                },
+                {
+                    "name": "x",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": []
+        },
+        {
+            "name": "layer7_edges",
+            "column_units": [
+                {
+                    "name": "source",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "target",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ]
+                },
+                {
+                    "name": "weight",
+                    "type": "INT",
+                    "constraints": [
+                        "NOTHING"
+                    ]
+                }
+            ],
+            "foreign_units": [
+                {
+                    "name": "target",
+                    "table": "layer7_nodes",
+                    "column": "target"
+                },
+                {
+                    "name": "source",
+                    "table": "layer7_nodes",
+                    "column": "source"
+                }
+            ]
+        }
+    ]
+}
