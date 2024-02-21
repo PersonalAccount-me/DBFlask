@@ -7,7 +7,7 @@ class FileManager:
     #  1.测试用
     # root_dir = r"C:\Users\86173\PyCharmProjects\PyOracle\MyDB\app01\views\dbfiles"
 
-    root_dir:str = os.path.abspath(r"./app01/views/dbfiles")
+    root_dir:str = os.path.abspath(r"./dbfiles")
 
     @staticmethod
     def read_file(file_path:str)->list:
